@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter une Matière{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/add_matiere.css') }}">
+{% endblock %}
+
+{% block body %}
+<header>
+    <nav>
+        <a href="{{ path('dashboard') }}" class="Retour-link">Retour</a>
+    </nav>
+</header>
+
+<div class="form-container">
+    <h1>Ajouter une Matière</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn btn-primary">Ajouter</button>
+    {{ form_end(form) }}
+
+    <a href="{{ path('matiere_list') }}" class="btn btn-secondary mt-3">Retour à la liste</a>
+</div>
+
+<footer>
+    <p>© 2024 Live London. All rights reserved.</p>
+</footer>
+{% endblock %}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Live London</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/login">Connexion</a></li>
+                <li><a href="/register">S'inscrire</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Cours d'anglais par visioconférence</h1>
+            <p> En immersion avec un professeur natif, en direct de Londres
+                disponible sous 24h, 7 jours sur 7, de 7h à 23h !</p>
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <h2>Professeurs natifs</h2>
+                <p>Apprenez avec des enseignants dont la langue maternelle est l'anglais.</p>
+                 <img src="{{ asset('https://livelondon.fr/images/2024/01/28/S5_%20janvier24_meilleurs%20podcasts_%20culture%20britannique_thumbnail.jpg') }}">
+            </div>
+            <div class="feature">
+                <h2>Flexibilité horaire</h2>
+                <p>Choisissez les horaires qui vous conviennent le mieux, disponibles 24/7.</p>
+                <img src="{{ asset('https://livelondon.fr/images/2024/01/26/S4_%20janvier24_culture%20anglosaxone_%20livres_thumbnail.jpg') }}">        
+            </div>
+            <div class="feature">
+                <h2>Accès instantané</h2>
+                <p>Commencez vos cours en moins de 24 heures après votre inscription.</p>   
+                <img src="{{ asset('https://livelondon.fr/images/2024/01/15/S3_%20janvier24_bars%20irlandais_%20Paris_Rennes_Lyon_Bordeaux_Marseille_thumbnail.jpg') }}"> 
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Live London. All rights reserved.</p>
+    </footer>
+</body>
+</html>

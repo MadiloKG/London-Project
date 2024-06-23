@@ -1,0 +1,52 @@
+home:
+  path: /
+  controller: App\Controller\HomeController::index
+
+
+enseignant_list:
+  path: /enseignants
+  controller: App\Controller\EnseignantController::list
+  
+dashboard:
+  path: /dashboard
+  controller: App\Controller\DashboardController::index
+
+app_login:
+  path: /login
+  controller: App\Controller\SecurityController::login
+
+app_logout:
+  path: /logout
+
+app_register:
+  path: /register
+  controller: App\Controller\RegistrationController::register
+
+matiere_add:
+  path: /matiere/add
+  controller: App\Controller\MatiereController::add
+
+
+matiere_list:
+  path: /matieres
+  controller: App\Controller\MatiereController::list
+ 
+enseignant_edit:
+  path: /enseignant/{id}/edit
+  controller:  App\Controller\EnseignantController::edit
+
+enseignant_delete:
+  path: /{id}
+  controller:  App\Controller\EnseignantController::delete
+
+matiere_edit:
+  path: /matiere/{id}/edit
+  controller: App\Controller\MatiereController::edit
+
+matiere_delete:
+  path: /{id}
+  controller: App\Controller\MatiereController::delete
+
+enseignant_add_matiere:
+  path: /enseignant/add-matiere
+  controller: App\Controller\EnseignantController::addMatiere

@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Live London</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/enseignants">Liste des Enseignants</a></li>
+                <li><a href="/matieres">Liste des Matières</a></li>
+                <li><a href="/enseignant/add-matiere">Enseignants & Matières</a></li>
+                <li><a href="/logout">Déconnexion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Bienvenue</h1>
+            <p> En direct de Londres
+                disponible sous 24h, 7 jours sur 7, de 7h à 23h !</p>
+        </section>
+
+        <section class="features">
+            <div class="feature">
+             <p>Les meilleurs podcasts sur la culture britannique
+Il existe de nombreux podcasts intéressants sur la culture britannique, couvrant une variété de sujets tels que l'histoire, la musique, la cuisine, la littérature et bien plus encore. Voici quelques...</p>
+                <img src="{{ asset('https://livelondon.fr/images/2024/01/28/S5_%20janvier24_meilleurs%20podcasts_%20culture%20britannique_thumbnail.jpg') }}">
+            </div>
+            <div class="feature">
+            <p>Culture générale anglo-saxonne : quels livres doit-on lire ?
+La culture générale anglosaxonne est vaste et diversifiée, et il existe de nombreux livres qui peuvent vous donner un aperçu de ses différentes facettes. Voici quelques suggestions de livres...</p>
+                 <img src="{{ asset('https://livelondon.fr/images/2024/01/26/S4_%20janvier24_culture%20anglosaxone_%20livres_thumbnail.jpg') }}">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Live London. All rights reserved.</p>
+    </footer>
+</body>
+</html>

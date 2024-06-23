@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Enseignants{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/enseignant.css') }}">
+{% endblock %}
+    
+{% block body %}
+<header>
+    <nav>
+        <a href="{{ path('dashboard') }}" class="home-link">Retour</a>
+    </nav>
+</header>
+
+<div class="main-content">
+    <h1>Liste des Enseignants</h1>
+    <ul class="enseignant-list">
+        {% for enseignant in enseignants %}
+            <li>
+                <span>{{ enseignant.email }}</span>
+                {% if enseignant.matieres is not empty %}
+                    <ul>
+                        {% for matiere in enseignant.matieres %}
+                            <li>{{ matiere.nom }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>Aucune matière assignée</p>
+                {% endif %}
+                <div class="buttons">
+                    <a href="{{ path('enseignant_edit', {'id': enseignant.id}) }}" class="btn btn-primary">Modifier</a>
+                    <form method="post" action="{{ path('enseignant_delete', {'id': enseignant.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet enseignant ?');" style="display:inline;">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ enseignant.id) }}">
+                        <button class="btn btn-danger">Supprimer</button>
+                    </form>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<footer>
+    <p>© 2024 Live London. All rights reserved.</p>
+</footer>
+{% endblock %}
