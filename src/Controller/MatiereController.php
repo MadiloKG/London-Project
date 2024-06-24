@@ -61,12 +61,17 @@ class MatiereController extends AbstractController
     #[Route('/matiere/{id}', name: 'matiere_delete', methods: ['DELETE'])]
     public function delete(Request $request, Matiere $matiere, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$matiere->getId(), $request->request->get('_token'))) {
+        if (!$matiere) {
+            throw $this->createNotFoundException('La matière n\'existe pas');
+        }
+
+        // Assurez-vous d'avoir un jeton CSRF pour la sécurité
+        if ($this->isCsrfTokenValid('delete' . $matiere->getId(), $request->request->get('_token'))) {
             $entityManager->remove($matiere);
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('matiere_list');
+        return $this->redirectToRoute('matiere_list'); // Redirige vers la liste des matières
     }
 }
 
